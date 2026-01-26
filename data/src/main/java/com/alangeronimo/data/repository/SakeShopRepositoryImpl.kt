@@ -25,7 +25,7 @@ class SakeShopRepositoryImpl(
                 api.getSakeShops().map { it.toDomain() }
             } catch (e: Exception) {
                 logger.logError("Repository", "API failed: ${e.message}. Loading fallback JSON.")
-                val backupJson = context.readBackupJson("sake_shops_backup.json")
+                val backupJson: String = context.readBackupJson("sake_shops_backup.json")
                 val type = object : TypeToken<List<SakeShopDto>>() {}.type
                 gson.fromJson<List<SakeShopDto>>(backupJson, type).map { it.toDomain() }
             }

@@ -22,11 +22,10 @@ fun PrimaryTextButton(
     TextButton(
         onClick = onClick,
         modifier = modifier,
-        colors =
-            ButtonDefaults.textButtonColors(
-                containerColor = Accent,
-                contentColor = MaterialTheme.colorScheme.onPrimary,
-            ),
+        colors = ButtonDefaults.textButtonColors(
+            containerColor = Accent,
+            contentColor = MaterialTheme.colorScheme.onPrimary,
+        ),
     ) {
         Text(
             text = text,

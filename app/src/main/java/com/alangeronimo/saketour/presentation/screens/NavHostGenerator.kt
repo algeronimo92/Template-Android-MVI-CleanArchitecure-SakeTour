@@ -7,6 +7,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.alangeronimo.domain.model.SakeShop
 import com.alangeronimo.saketour.presentation.viewmodel.ISakeShopViewModel
 
 @Composable
@@ -24,8 +25,8 @@ fun NavHostGenerator(
             "detail/{name}",
             arguments = listOf(navArgument("name") { type = NavType.StringType }),
         ) { backStackEntry ->
-            val name = backStackEntry.arguments?.getString("name") ?: ""
-            val shop = viewModel.findShopByName(name)
+            val name: String = backStackEntry.arguments?.getString("name") ?: ""
+            val shop: SakeShop? = viewModel.findShopByName(name)
             shop?.let { SakeShopDetailScreen(it) { navController.popBackStack() } }
         }
     }
