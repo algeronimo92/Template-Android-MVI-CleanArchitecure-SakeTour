@@ -11,11 +11,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.alangeronimo.designsystem.ui.theme.Accent
 import com.alangeronimo.designsystem.ui.theme.SakeTourTheme
 
+const val MAX_RATING = 5
+
 @Composable
 fun StarRating(
     rating: Float,
     modifier: Modifier = Modifier,
-    maxRating: Int = 5,
+    maxRating: Int = MAX_RATING,
 ) {
     Row(modifier = modifier) {
         for (i in 1..maxRating) {
