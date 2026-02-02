@@ -99,4 +99,12 @@ class SakeShopViewModelTest {
             assertNotNull(shop)
             assertEquals("Tokyo Brew", shop?.name)
         }
+
+    @Test
+    fun `findShopByName should return null when shop doesn't exist`() =
+        runTest {
+            advanceUntilIdle()
+            val shop = viewModel.findShopByName("Non Existing Shop")
+            assertEquals(null, shop)
+        }
 }
