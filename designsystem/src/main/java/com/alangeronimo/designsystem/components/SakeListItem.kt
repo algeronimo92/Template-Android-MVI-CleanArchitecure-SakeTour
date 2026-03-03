@@ -29,10 +29,9 @@ fun SakeListItem(
 ) {
     Column(modifier = modifier.clickable(onClick = onClick)) {
         Row(
-            modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = Dimens.PaddingMedium, vertical = Dimens.PaddingSmall),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = Dimens.PaddingMedium, vertical = Dimens.PaddingSmall),
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Column(modifier = Modifier.weight(1f)) {

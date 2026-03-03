@@ -23,13 +23,12 @@ fun ShopImageLoader(
     modifier: Modifier = Modifier,
     contentScale: ContentScale = ContentScale.FillWidth,
 ) {
-    val painter =
-        rememberAsyncImagePainter(
-            model = imageUrl,
-            placeholder = painterResource(id = placeholder),
-            error = painterResource(id = errorImage),
-            contentScale = contentScale,
-        )
+    val painter = rememberAsyncImagePainter(
+        model = imageUrl,
+        placeholder = painterResource(id = placeholder),
+        error = painterResource(id = errorImage),
+        contentScale = contentScale,
+    )
 
     val state = painter.state
 
